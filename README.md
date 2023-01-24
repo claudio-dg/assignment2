@@ -81,7 +81,12 @@ After that you can type the following command in the terminal to simultaneously 
 ```bash
 $ roslaunch assignmnent_1 start_simulation.launch
 ```
-
+	
+## My Robot
+	image and robot description
+	
+	
+	
 ## Project structure
 
 The project is based on the ROS scheme that is shown in the following ```rqt_graph```:
@@ -110,7 +115,9 @@ This repository contains a ROS package called ```"assignment_1"``` that includes
 - [launch/](https://github.com/claudio-dg/assignment_1/tree/main/launch): It contains the launch file to start the simulation
 	
 	* [start_simulation.launch](https://github.com/claudio-dg/assignment_1/blob/main/launch/start_simulation.launch): launch file of the project
+
 	
+
  
 ## Software Components and code description
 	
