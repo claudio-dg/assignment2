@@ -131,5 +131,15 @@ This repository contains a ROS package called ```"assignment_1"``` that includes
 
 ## Behaviuor Presentation
  
-DEMO
+Video aruco detection
+****
+DEMO VIDEO
+Here you can find a short video showing the resulting simulation of my project. Please notice that most of the video has a x10 speed up and also that some numbers will Pop-Up in the screen to highlight the crucial moments of the simulation: for a better understanding such numbers are asscoiated to a text description of the behaviour that you can find here just below the video.
 
+VIDEO
+
+1. After having detetcted all markers, the robot plans to move to C2 and starts its motion, waiting for the goal to be reached or for the battery to get low.
+2. The robot has reached the goal, since it is a corridor it does not apply survey algorithm, but plans to move to R3 Room and starts doing it.
+3. Once R3 is reached the robot rotates the camera of 360 degrees, and plans to move back to the previous corridor
+4. Before reaching the exact coordinates of C2 the batery gets low: robot enters in Recharging state of the Finite state machine, and since he hasn't reached yet the corridor it believes to be still in R3; for this reason it plans again to reach C2, and once it reaches its exact coordinates it plans to reach the recharging station and moves towards it.
+5. In the end the robot reaches the Recharging station and starts recharging the battery. It waits until it gets full charge, and then restarts its routine by moving towards a corridor.
