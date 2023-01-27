@@ -134,9 +134,9 @@ This repository contains a ROS package called ```"assignment_1"``` that includes
 Video aruco detection
 ****
 DEMO VIDEO
-Here you can find a short video showing the resulting simulation of my project. Please notice that most of the video has a x10 speed up and also that some numbers will Pop-Up in the screen to highlight the crucial moments of the simulation: for a better understanding such numbers are asscoiated to a text description of the behaviour that you can find here just below the video.
+Here you can find a short video (by clicking on the image) showing the resulting simulation of my project. Please notice that most of the video has a x10 speed up and also that some numbers will Pop-Up in the screen to highlight the crucial moments of the simulation: for a better understanding such numbers are asscoiated to a text description of the behaviour that you can find here just below the video.
 
-VIDEO
+[![Click to see Simulation Demo](http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](http://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID_HERE "Video Title")
 
 **1.** After having detetcted all markers, the robot plans to move to C2 and starts its motion, waiting for the goal to be reached or for the battery to get low.
 	
