@@ -1,0 +1,59 @@
+\hypertarget{marker__publish_8cpp}{}\doxysection{src/marker\+\_\+publish.cpp File Reference}
+\label{marker__publish_8cpp}\index{src/marker\_publish.cpp@{src/marker\_publish.cpp}}
+
+
+Modified copy of \mbox{\hyperlink{marker__publish_8cpp}{marker\+\_\+publish.\+cpp}} to publish all markers visible publish all markers visible once on a topic and to terminate the node when a certain id is detected. (modified by Claudio Del Gaizo, 2023)  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$aruco/aruco.\+h$>$}\newline
+{\ttfamily \#include $<$aruco/cvdrawingutils.\+h$>$}\newline
+{\ttfamily \#include $<$ros/ros.\+h$>$}\newline
+{\ttfamily \#include $<$image\+\_\+transport/image\+\_\+transport.\+h$>$}\newline
+{\ttfamily \#include $<$cv\+\_\+bridge/cv\+\_\+bridge.\+h$>$}\newline
+{\ttfamily \#include $<$sensor\+\_\+msgs/image\+\_\+encodings.\+h$>$}\newline
+{\ttfamily \#include $<$assignment2/\+Room\+Information.\+h$>$}\newline
+{\ttfamily \#include $<$std\+\_\+msgs/\+U\+Int32.\+h$>$}\newline
+{\ttfamily \#include $<$cstring$>$}\newline
+Include dependency graph for marker\+\_\+publish.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{marker__publish_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_aruco_marker_publisher}{Aruco\+Marker\+Publisher}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{marker__publish_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{marker__publish_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}} 
+int {\bfseries main} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{marker__publish_8cpp_af63703ec4a902c3cb12cedd505030070}\label{marker__publish_8cpp_af63703ec4a902c3cb12cedd505030070}} 
+ros\+::\+Publisher {\bfseries id\+\_\+pub}
+\item 
+\mbox{\Hypertarget{marker__publish_8cpp_ade48fd46a6f49486c6569bdf4dcce9e8}\label{marker__publish_8cpp_ade48fd46a6f49486c6569bdf4dcce9e8}} 
+std\+\_\+msgs\+::\+U\+Int32 {\bfseries id}
+\item 
+\mbox{\Hypertarget{marker__publish_8cpp_a5bfbd3b409ebe4bc09f9ed58d177c2bd}\label{marker__publish_8cpp_a5bfbd3b409ebe4bc09f9ed58d177c2bd}} 
+int {\bfseries prec} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Modified copy of \mbox{\hyperlink{marker__publish_8cpp}{marker\+\_\+publish.\+cpp}} to publish all markers visible publish all markers visible once on a topic and to terminate the node when a certain id is detected. (modified by Claudio Del Gaizo, 2023) 
+
+\begin{DoxyAuthor}{Author}
+Bence Magyar 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+January 2014 
+\end{DoxyDate}

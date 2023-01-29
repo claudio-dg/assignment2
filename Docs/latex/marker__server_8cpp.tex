@@ -1,0 +1,61 @@
+\hypertarget{marker__server_8cpp}{}\doxysection{src/marker\+\_\+server.cpp File Reference}
+\label{marker__server_8cpp}\index{src/marker\_server.cpp@{src/marker\_server.cpp}}
+
+
+Modified copy of \mbox{\hyperlink{marker__server_8cpp}{marker\+\_\+server.\+cpp}} adding a client to /\+M\+Y\+\_\+move\+\_\+arm service (modified by Claudio Del Gaizo, 2023)  
+
+
+{\ttfamily \#include $<$ros/ros.\+h$>$}\newline
+{\ttfamily \#include $<$assignment2/\+Room\+Connection.\+h$>$}\newline
+{\ttfamily \#include $<$assignment2/\+Room\+Information.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}assignment2/\+M\+Y\+\_\+\+Set\+Pose.\+h\char`\"{}}\newline
+Include dependency graph for marker\+\_\+server.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{marker__server_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{marker__server_8cpp_acb386145eddd7e35588ea2b3a5ec6ca5}\label{marker__server_8cpp_acb386145eddd7e35588ea2b3a5ec6ca5}} 
+bool {\bfseries marker\+Callback} (assignment2\+::\+Room\+Information\+::\+Request \&req, assignment2\+::\+Room\+Information\+::\+Response \&res)
+\item 
+\mbox{\Hypertarget{marker__server_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{marker__server_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}} 
+int {\bfseries main} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{marker__server_8cpp_a3cd65ac7cbb14777268370c25c9e515e}\label{marker__server_8cpp_a3cd65ac7cbb14777268370c25c9e515e}} 
+ros\+::\+Service\+Client {\bfseries arm\+\_\+client}
+\item 
+\mbox{\Hypertarget{marker__server_8cpp_a81117f758380b5b336a57ad3084c8ede}\label{marker__server_8cpp_a81117f758380b5b336a57ad3084c8ede}} 
+assignment2\+::\+M\+Y\+\_\+\+Set\+Pose {\bfseries next\+\_\+pose}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Modified copy of \mbox{\hyperlink{marker__server_8cpp}{marker\+\_\+server.\+cpp}} adding a client to /\+M\+Y\+\_\+move\+\_\+arm service (modified by Claudio Del Gaizo, 2023) 
+
+\begin{DoxyAuthor}{Author}
+Carmine Recchiuto 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+January 2023
+\end{DoxyDate}
+Service Client to\+: ~\newline
+
+
+/\+M\+Y\+\_\+move\+\_\+arm service \+: to move the robot\textquotesingle{}s arm towards the successive aruco marker.
+
+Service Server to\+: ~\newline
+
+
+/room\+\_\+info \+: to receive the number of ID detected from robot\textquotesingle{}s camera and give as answer the information of the room related
+
+Description\+:
+
+This node receives the number of ID detected from robot\textquotesingle{}s camera. Based on that it will answer giving information of the room related to such marker and calling /\+M\+Y\+\_\+move\+\_\+arm service to move robot\textquotesingle{}s arm towards the successive aruco marker. 

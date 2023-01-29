@@ -1,0 +1,128 @@
+\hypertarget{move__arm__server_8cpp}{}\doxysection{src/move\+\_\+arm\+\_\+server.cpp File Reference}
+\label{move__arm__server_8cpp}\index{src/move\_arm\_server.cpp@{src/move\_arm\_server.cpp}}
+
+
+implements the server service to move robot\textquotesingle{}s arm  
+
+
+{\ttfamily \#include $<$ros/ros.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$std\+\_\+msgs/\+Float64.\+h$>$}\newline
+{\ttfamily \#include $<$assignment2/\+M\+Y\+\_\+\+Set\+Pose.\+h$>$}\newline
+Include dependency graph for move\+\_\+arm\+\_\+server.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{move__arm__server_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{move__arm__server_8cpp_a72980ec4681aa1d5bae6dc6f3fd6c3de}{reach}} (assignment2\+::\+M\+Y\+\_\+\+Set\+Pose\+::\+Request \&req, assignment2\+::\+M\+Y\+\_\+\+Set\+Pose\+::\+Response \&resp)
+\begin{DoxyCompactList}\small\item\em Server Callback for /\+M\+Y\+\_\+move\+\_\+arm Service. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{move__arm__server_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char $\ast$$\ast$argv)
+\begin{DoxyCompactList}\small\item\em main function \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{move__arm__server_8cpp_aa3216473d12f1e5bb04c873389e8b1d0}\label{move__arm__server_8cpp_aa3216473d12f1e5bb04c873389e8b1d0}} 
+ros\+::\+Publisher \mbox{\hyperlink{move__arm__server_8cpp_aa3216473d12f1e5bb04c873389e8b1d0}{pub\+\_\+joint1}}
+\begin{DoxyCompactList}\small\item\em global publisher for /m2wr/joint1\+\_\+position\+\_\+controller/command \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{move__arm__server_8cpp_adad5870eff6605e324f2231ee85fef90}\label{move__arm__server_8cpp_adad5870eff6605e324f2231ee85fef90}} 
+ros\+::\+Publisher \mbox{\hyperlink{move__arm__server_8cpp_adad5870eff6605e324f2231ee85fef90}{pub\+\_\+joint2}}
+\begin{DoxyCompactList}\small\item\em global publisher for /m2wr/joint2\+\_\+position\+\_\+controller/command \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{move__arm__server_8cpp_aae031c3f2ef71c979191b935b0270955}\label{move__arm__server_8cpp_aae031c3f2ef71c979191b935b0270955}} 
+ros\+::\+Publisher \mbox{\hyperlink{move__arm__server_8cpp_aae031c3f2ef71c979191b935b0270955}{pub\+\_\+joint3}}
+\begin{DoxyCompactList}\small\item\em global publisher for /m2wr/joint3\+\_\+position\+\_\+controller/command \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{move__arm__server_8cpp_a2950384d97ea665ccaf4d2a09ad7a48f}\label{move__arm__server_8cpp_a2950384d97ea665ccaf4d2a09ad7a48f}} 
+ros\+::\+Publisher \mbox{\hyperlink{move__arm__server_8cpp_a2950384d97ea665ccaf4d2a09ad7a48f}{pub\+\_\+joint4}}
+\begin{DoxyCompactList}\small\item\em global publisher for /m2wr/joint4\+\_\+position\+\_\+controller/command \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{move__arm__server_8cpp_a6212f4d99b9b2e49b4751e0e3937301b}\label{move__arm__server_8cpp_a6212f4d99b9b2e49b4751e0e3937301b}} 
+std\+\_\+msgs\+::\+Float64 \mbox{\hyperlink{move__arm__server_8cpp_a6212f4d99b9b2e49b4751e0e3937301b}{joint1\+\_\+value}}
+\begin{DoxyCompactList}\small\item\em message containing joint\+\_\+1 values \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{move__arm__server_8cpp_af08f71d2acbd98c2d03cb77714257b18}\label{move__arm__server_8cpp_af08f71d2acbd98c2d03cb77714257b18}} 
+std\+\_\+msgs\+::\+Float64 \mbox{\hyperlink{move__arm__server_8cpp_af08f71d2acbd98c2d03cb77714257b18}{joint2\+\_\+value}}
+\begin{DoxyCompactList}\small\item\em message containing joint\+\_\+2 values \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{move__arm__server_8cpp_aa33eb710f54d894497792f4068ef991d}\label{move__arm__server_8cpp_aa33eb710f54d894497792f4068ef991d}} 
+std\+\_\+msgs\+::\+Float64 \mbox{\hyperlink{move__arm__server_8cpp_aa33eb710f54d894497792f4068ef991d}{joint3\+\_\+value}}
+\begin{DoxyCompactList}\small\item\em message containing joint\+\_\+3 values \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{move__arm__server_8cpp_aaf17cf033da6bb8f6790b42e827ac5ec}\label{move__arm__server_8cpp_aaf17cf033da6bb8f6790b42e827ac5ec}} 
+std\+\_\+msgs\+::\+Float64 \mbox{\hyperlink{move__arm__server_8cpp_aaf17cf033da6bb8f6790b42e827ac5ec}{joint4\+\_\+value}}
+\begin{DoxyCompactList}\small\item\em message containing joint\+\_\+4 values \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{move__arm__server_8cpp_a50a114f01e87e379bfddb9b5fd121dfd}\label{move__arm__server_8cpp_a50a114f01e87e379bfddb9b5fd121dfd}} 
+int \mbox{\hyperlink{move__arm__server_8cpp_a50a114f01e87e379bfddb9b5fd121dfd}{new\+\_\+pose}} = 0
+\begin{DoxyCompactList}\small\item\em global int variable to flag if a new pose has to be published \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{move__arm__server_8cpp_a2251ba55279aef307357d4b82d7cffb7}\label{move__arm__server_8cpp_a2251ba55279aef307357d4b82d7cffb7}} 
+int \mbox{\hyperlink{move__arm__server_8cpp_a2251ba55279aef307357d4b82d7cffb7}{first\+\_\+time}} = 1
+\begin{DoxyCompactList}\small\item\em global int variable to flag first iteration \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{move__arm__server_8cpp_abbeb8ae63622a7fef0b5a56bb91a1682}\label{move__arm__server_8cpp_abbeb8ae63622a7fef0b5a56bb91a1682}} 
+int \mbox{\hyperlink{move__arm__server_8cpp_abbeb8ae63622a7fef0b5a56bb91a1682}{sign}} = -\/1
+\begin{DoxyCompactList}\small\item\em global int variable to rotate camera clock-\/wise/anti-\/clock-\/wise \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+implements the server service to move robot\textquotesingle{}s arm 
+
+\begin{DoxyAuthor}{Author}
+Claudio Del Gaizo 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+21/01/2023
+\end{DoxyDate}
+Publishes to\+: ~\newline
+
+
+/m2wr/joint1\+\_\+position\+\_\+controller/command \+: to move the joint\+\_\+1 of robot\textquotesingle{}s arm
+
+/m2wr/joint2\+\_\+position\+\_\+controller/command \+: to move the joint\+\_\+2 of robot\textquotesingle{}s arm
+
+/m2wr/joint3\+\_\+position\+\_\+controller/command \+: to move the joint\+\_\+3 of robot\textquotesingle{}s arm
+
+/m2wr/joint4\+\_\+position\+\_\+controller/command \+: to move the joint\+\_\+4 of robot\textquotesingle{}s arm
+
+Server for Services\+: ~\newline
+
+
+M\+Y\+\_\+move\+\_\+arm \+: Service to select which robot\textquotesingle{}s arm position to apply
+
+Description\+:
+
+This node implements the server service to move robot\textquotesingle{}s arm \+: when called it will publish the joint values on the various Joint\+\_\+position\+\_\+controllers according to the request number, in order to move the arm to a certain pose, (each related to a certain aruco marker to detect). 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{move__arm__server_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{move__arm__server_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{move\_arm\_server.cpp@{move\_arm\_server.cpp}!main@{main}}
+\index{main@{main}!move\_arm\_server.cpp@{move\_arm\_server.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+
+
+main function 
+
+Initialize the node, the server for /\+M\+Y\+\_\+move\+\_\+arm and the publishers for joint\+\_\+position\+\_\+controllers, then it publshes (only once) the position of the arm to detect the first aruco marker, and waits for a new pose to be set to publish it. \mbox{\Hypertarget{move__arm__server_8cpp_a72980ec4681aa1d5bae6dc6f3fd6c3de}\label{move__arm__server_8cpp_a72980ec4681aa1d5bae6dc6f3fd6c3de}} 
+\index{move\_arm\_server.cpp@{move\_arm\_server.cpp}!reach@{reach}}
+\index{reach@{reach}!move\_arm\_server.cpp@{move\_arm\_server.cpp}}
+\doxysubsubsection{\texorpdfstring{reach()}{reach()}}
+{\footnotesize\ttfamily bool reach (\begin{DoxyParamCaption}\item[{assignment2\+::\+M\+Y\+\_\+\+Set\+Pose\+::\+Request \&}]{req,  }\item[{assignment2\+::\+M\+Y\+\_\+\+Set\+Pose\+::\+Response \&}]{resp }\end{DoxyParamCaption})}
+
+
+
+Server Callback for /\+M\+Y\+\_\+move\+\_\+arm Service. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em req} & \+: assignment2\+::\+M\+Y\+\_\+\+Set\+Pose\+::\+Request \+: contains an integer specifying which pose the robot should reach\\
+\hline
+{\em resp} & \+: \+:assignment2\+::\+M\+Y\+\_\+\+Set\+Pose\+::\+Response \+: response non used here\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool
+\end{DoxyReturn}
+This function takes the value of the request according to which it initializes the joint values necessary to rech the required pose. It presents 9 different poses to select from, 1 for each marker plus a default pose and a pose to rotate the camera of 360 degrees. 
