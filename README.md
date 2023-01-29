@@ -67,13 +67,13 @@ $ sudo apt-get install ros-<ros_distro>-navigation
 - [aruco_ros](https://github.com/CarmineD8/aruco_ros) package for being able to work with aruco markers.
 
 	
-When all these are correctly installed, to try this repository it is necessary to: clone it in your ROS workspace: 
+When all these are correctly installed, to try the whole project it is necessary to: clone this repository in your ROS workspace: 
 
 ```bash
-$ git clone https://github.com/claudio-dg/assignment_1.git
+$ git clone https://github.com/claudio-dg/assignment2.git
 ```
 
-then type the following commands in the terminal to make sure to launch the rosmaster as well as the aRMOR service:
+then type the following commands in a terminal to make sure to launch first part of the project:
 
 ```bash
 $ Roscore &
@@ -86,13 +86,19 @@ Please note that after building the package for the first time it may be require
 $ ./gradlew deployApp
 ```
 	
-After that you can type the following command in the terminal to simultaneously launch all the necessary nodes through the [launchFile](https://github.com/claudio-dg/assignment_1/tree/main/launch):
+After that you can type the following command in another terminal:
 
 ```bash
 $ roslaunch assignmnent_1 start_simulation.launch
 ```
+
+After that, to launnch the programms contained in this repository, simply open a new terminal and launch:
 	
-	
+```bash
+$ roslaunch assignmnent2 assignment.launch
+```
+
+This will open Gazebo and Rviz Simulation Environments along with a terminal showing the functioning of ```FSM```, and the robot will start its programmed behaviour
 ## Project structure
 
 The project is based on the ROS scheme that is shown in the following ```rqt_graph```:
