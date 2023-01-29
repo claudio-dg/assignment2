@@ -111,17 +111,21 @@ This repository contains a ROS package called ```"assignment2"``` that includes 
 
 - [CMakeList.txt](https://github.com/claudio-dg/assignment2/blob/main/CMakeLists.txt): File to configure this package.
 - [package.xml](https://github.com/claudio-dg/assignment2/blob/main/package.xml): File to configure this package.
-- Docs: folder containing ```Doxygen documentation``` of the package
+- [Docs](https://github.com/claudio-dg/assignment2/tree/main/Docs): folder containing ```Doxygen documentation``` of the package
+- [config](https://github.com/claudio-dg/assignment2/tree/main/config) : contains some parameters of robot's motors
 - [media/](https://github.com/claudio-dg/assignment2/tree/main/media): folder containing images and graphs used within this [README](https://github.com/claudio-dg/assignment2/blob/main/README.md).
-- [src](https://github.com/claudio-dg/assignment2/tree/main/src): It contains the implementation of each software components produced for this project.
-	
+- [msg](https://github.com/claudio-dg/assignment2/tree/main/msg): contains a useful message for room information.
+- [src](https://github.com/claudio-dg/assignment2/tree/main/src): It contains the implementation of each software components produced for this project.	
 	* [marker_publish.cpp](https://github.com/claudio-dg/assignment2/blob/main/src/marker_publish.cpp): contains the implementation of Aruco markers detector and publisher
 	
 	* [marker_server.cpp](https://github.com/claudio-dg/assignment2/blob/main/src/marker_server.cpp): implements a service that requires the id (marker) detected by the robot and it replies with the information about the corresponding room (name of the room, coordinates of the center, connections with other rooms)
 
 	
 	* [move_arm_server.cpp](https://github.com/claudio-dg/assignment2/blob/main/src/move_arm_server.cpp): It contains the implementation of the server to move robot's arm
-	
+
+- [srv](https://github.com/claudio-dg/assignment2/tree/main/srv) : contains two useful services for roomInfo and robot pose.
+- [urdf/](https://github.com/claudio-dg/assignment2/tree/main/urdf): folder containing robot Xacros to build the model and a urdf auto.generated but not used in this project
+- [worlds/](https://github.com/claudio-dg/assignment2/tree/main/worlds): contains the simulation environment representing the "house" to be monitored
 
 	
 - [launch/](https://github.com/claudio-dg/assignment2/tree/main/launch): It contains the launch files to start the simulation
