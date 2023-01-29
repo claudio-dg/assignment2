@@ -12,7 +12,6 @@ Table of contents
 
 * [Introduction](#introduction)
 * [Dependencies and Setup](#dependencies-and-setup)
-* [My Robot](#my-robot)
 * [Project structure](#project-structure)
 * [Software Components and code description](#software-components-and-code-description)
 * [Behaviuor Presentation](#behaviuor-presentation)
@@ -92,10 +91,6 @@ After that you can type the following command in the terminal to simultaneously 
 ```bash
 $ roslaunch assignmnent_1 start_simulation.launch
 ```
-	
-## My Robot
-	image and robot description
-	
 	
 	
 ## Project structure
