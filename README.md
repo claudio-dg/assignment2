@@ -145,12 +145,13 @@ This repository contains a ROS package called ```"assignment_1"``` that includes
  
 Markers Detection DEMO 
 ====================================================================
+The following video shows the first part of the simulation in which the robot detects one by one the aurco markers: each time a marker is detected, the robot builds the ontology of the map adding the information retrived by the Aruco, and then moves towards another marker until the last one is detected; at that point it moves to a default pose and starts with the patrolling algorithm described in the next section.
 
-PATROLLING DEMO 
+Patrolling DEMO 
 ====================================================================
 	
 	
-Here you can find a short video (by clicking on the image) showing the resulting simulation of the second part of my project, that is the part that comes after the markers detection. Please notice that most of the video has a x10 speed up and also that some numbers will Pop-Up in the screen to highlight the crucial moments of the simulation: for a better understanding such numbers are asscoiated to a text description of the behaviour that you can find here just below the video.
+Here you can find a short video (by clicking on the image) showing the resulting simulation of the second part of my project, that is the patrolling part that comes after the markers detection. Please notice that most of the video has a x10 speed up and also that some numbers will Pop-Up in the screen to highlight the crucial moments of the simulation: for a better understanding such numbers are asscoiated to a text description of the behaviour that you can find here just below the video.
 
 [![Click to see Simulation Demo](https://github.com/claudio-dg/assignment2/blob/main/media/Intro.png?raw=true)](https://youtu.be/ZzqchcErcfk)
 
