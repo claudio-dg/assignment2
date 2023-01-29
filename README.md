@@ -32,7 +32,7 @@ The Map
 The 3D environment representation of the 2D map of former assignment, which has been used for this project is shown here below:
 
 <p><p align="center">
-<img src="https://github.com/claudio-dg/assignment2/blob/main/media/GazeboMap.png?raw=true" width="400" />
+<img src="https://github.com/claudio-dg/assignment2/blob/main/media/GazeboMap.png?raw=true" width="500" />
 <p>
 
 	
@@ -40,11 +40,11 @@ The Robot
 ====================================================================
 	
 <p><p align="center">
-<img src="https://github.com/claudio-dg/assignment2/blob/main/media/My_robot1.png?raw=true" width="300" />
+<img src="https://github.com/claudio-dg/assignment2/blob/main/media/My_robot1.png?raw=true" width="400" />
 <p>
 	
 <p><p align="center">
-<img src="https://github.com/claudio-dg/assignment2/blob/main/media/My_robot2.png?raw=true" width="300" />
+<img src="https://github.com/claudio-dg/assignment2/blob/main/media/My_robot2.png?raw=true" width="400" />
 <p>
 	
 ##  Dependencies and Setup
