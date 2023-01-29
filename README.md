@@ -101,19 +101,19 @@ $ roslaunch assignmnent2 assignment.launch
 These will open Gazebo and Rviz Simulation Environments along with a terminal showing the functioning of ```FSM```, and the robot will start its programmed behaviour
 ## Project structure
 
-The project is based on the ROS scheme that is shown in the following ```rqt_graph```:
+The Overall project is based on the ROS scheme that is shown in the following ```rqt_graph```:
 
 <p align="center">
-<img src="https://github.com/claudio-dg/assignment_1/blob/main/images/assignment_1_rosgraph.png?raw=true" width="850" />
+<img src="https://github.com/claudio-dg/assignment2/blob/main/media/final_rosgraph.png?raw=true" width="850" />
 <p>
  
-This repository contains a ROS package called ```"assignment_1"``` that includes the following resources:
+This repository contains a ROS package called ```"assignment2"``` that includes the following resources:
 
-- [CMakeList.txt](https://github.com/claudio-dg/assignment_1/blob/main/CMakeLists.txt): File to configure this package.
-- [package.xml](https://github.com/claudio-dg/assignment_1/blob/main/package.xml): File to configure this package.
-- [Docs/](https://github.com/claudio-dg/assignment_1/tree/main/Docs): folder containing ```Doxygen documentation``` of the package
-- [images/](https://github.com/claudio-dg/assignment_1/tree/main/images): folder containing images and graphs used within this [README](https://github.com/claudio-dg/assignment_1/blob/main/README.md).
-- [scripts/](https://github.com/claudio-dg/assignment_1/tree/main/scripts): It contains the implementation of each software components produced for this project.
+- [CMakeList.txt](https://github.com/claudio-dg/assignment2/blob/main/CMakeLists.txt): File to configure this package.
+- [package.xml](https://github.com/claudio-dg/assignment2/blob/main/package.xml): File to configure this package.
+- Docs: folder containing ```Doxygen documentation``` of the package
+- [media/](https://github.com/claudio-dg/assignment2/tree/main/media): folder containing images and graphs used within this [README](https://github.com/claudio-dg/assignment2/blob/main/README.md).
+- src: It contains the implementation of each software components produced for this project.
 	
 	* [FSM.py](https://github.com/claudio-dg/assignment_1/blob/main/scripts/FSM.py): contains the implementation of the SMACH Finite States Machine
 	
@@ -124,7 +124,12 @@ This repository contains a ROS package called ```"assignment_1"``` that includes
 	* [planner.py](https://github.com/claudio-dg/assignment_1/blob/main/scripts/planner.py): It is a dummy implementation of a motion planner. (Credits to [arch_skeleton](https://github.com/buoncubi/arch_skeleton))
 	
 	* [robot_state.py](https://github.com/claudio-dg/assignment_1/blob/main/scripts/robot_state.py): It implements the robot state including: current position, and battery level.
-- [launch/](https://github.com/claudio-dg/assignment_1/tree/main/launch): It contains the launch file to start the simulation
+	
+- [launch/](https://github.com/claudio-dg/assignment2/tree/main/launch): It contains the launch files to start the simulation
+	
+	* [start_simulation.launch](https://github.com/claudio-dg/assignment_1/blob/main/launch/start_simulation.launch): launch file of the project
+	
+	* [start_simulation.launch](https://github.com/claudio-dg/assignment_1/blob/main/launch/start_simulation.launch): launch file of the project
 	
 	* [start_simulation.launch](https://github.com/claudio-dg/assignment_1/blob/main/launch/start_simulation.launch): launch file of the project
 
@@ -145,7 +150,7 @@ This repository contains a ROS package called ```"assignment_1"``` that includes
  
 Markers Detection DEMO 
 ====================================================================
-The following video shows the first part of the simulation in which the robot detects one by one the aurco markers: each time a marker is detected, the robot builds the ontology of the map adding the information retrived by the Aruco, and then moves towards another marker until the last one is detected; at that point it moves to a default pose and starts with the patrolling algorithm described in the next section.
+The following video (please click on the image to see it) shows the first part of the simulation in which the robot detects one by one the aurco markers: each time a marker is detected, the robot builds the ontology of the map adding the information retrived by the Aruco, and then moves towards another marker until the last one is detected; at that point it moves to a default pose and starts with the patrolling algorithm described in the next section.
 
 [![Click to see Simulation Demo](https://github.com/claudio-dg/assignment2/blob/main/media/ArucoIntro.png?raw=true)](https://youtu.be/vXN9BJobEvc)
 
