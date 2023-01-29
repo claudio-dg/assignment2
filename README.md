@@ -143,13 +143,14 @@ This repository contains a ROS package called ```"assignment_1"``` that includes
 
 ## Behaviuor Presentation
  
-Video aruco detection
-****
-DEMO VIDEO1
+Markers Detection DEMO 
+====================================================================
+
+PATROLLING DEMO 
 ====================================================================
 	
 	
-Here you can find a short video (by clicking on the image) showing the resulting simulation of my project. Please notice that most of the video has a x10 speed up and also that some numbers will Pop-Up in the screen to highlight the crucial moments of the simulation: for a better understanding such numbers are asscoiated to a text description of the behaviour that you can find here just below the video.
+Here you can find a short video (by clicking on the image) showing the resulting simulation of the second part of my project, that is the part that comes after the markers detection. Please notice that most of the video has a x10 speed up and also that some numbers will Pop-Up in the screen to highlight the crucial moments of the simulation: for a better understanding such numbers are asscoiated to a text description of the behaviour that you can find here just below the video.
 
 [![Click to see Simulation Demo](https://github.com/claudio-dg/assignment2/blob/main/media/Intro.png?raw=true)](https://youtu.be/ZzqchcErcfk)
 
