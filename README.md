@@ -21,33 +21,32 @@ Table of contents
 
 ## Introduction
 
-The goal of this assignment is to develop a software architecture to control a robot, which is deployed in a indoor environment for surveillance purposes. The robot’s objective is to visit the different locations and stay there for some times.
+The goal of this assignment is to integrate the architecture developed in the first assignment with a robotic simulation., in particular we have to Add a robot to a simulation environment and Integrate (if needed, modify it) the architecture that we have developed in the first assignment to the given scenario in such a way that:
+* The robot is spawned in the initial position x = -6.0, y = 11.0
+* Builds the "semantic" map of the environment by detecting, without moving the base of the robot, all seven markers that are present around it, by calling the provided service node.
+* Starts the patrolling algorithm by relying on autonomous navigation strategies (mapping/planning) and on the information collected and stored in the ontology during the previous step.
+* When a room is reached, perform a complete scan of the room (by rotating the base or the camera).
 
-The 2D environment has to be produced making use of Armor_api to create an ontology, and should resemble the following map, made of 4 rooms and 3 corridors:
+The Map
+====================================================================
+The 3D environment representation of the 2D map of former assignment, which has been used for this project is shown here below:
 
 <p><p align="center">
-<img src="https://github.com/claudio-dg/assignment_1/blob/main/images/map.png?raw=true" width="400" />
+<img src="https://github.com/claudio-dg/assignment2/blob/main/media/GazeboMap.png?raw=true" width="400" />
+<p>
+
+	
+The Robot
+====================================================================
+	
+<p><p align="center">
+<img src="https://github.com/claudio-dg/assignment2/blob/main/media/My_robot1.png?raw=true" width="300" />
 <p>
 	
+<p><p align="center">
+<img src="https://github.com/claudio-dg/assignment2/blob/main/media/My_robot2.png?raw=true" width="300" />
+<p>
 	
-<!--  
--->
-Within this environment, the robot should:
-
-1. start in the E location and wait until it receives the information to build the 
-```topological map```, i.e. the relations between C1, C2, R1, R2, R3 locations and the doors D1...D6.
-2. move in a new location, and should wait for some time before visiting another location. This 
-behavior is repeated in a infinite loop. When robot’s battery is not low, it should move among locations with this ```policy```:
-- It should mainly stay on corridors,
-- If a reachable room has not been visited for some time, it becomes ```URGENT``` and the robot should visit it.
-3. When the robot’s ```battery is low```, it should go in the E location, and wait for some time before starting again with the above behavior
-
-<!-- To define the behaviour of the robot we have to create a Finite States Machine using SMACH libraries -->
-
-
-
-
-
 ##  Dependencies and Setup
 
 In order to run correctly the project of this repository, some important dependencies have to be taken into account, therefore please make sure to have the following packages already installed in your ```ros_workspace```:
