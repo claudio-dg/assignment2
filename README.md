@@ -92,7 +92,7 @@ After that you can type the following command in another terminal:
 $ roslaunch assignmnent_1 start_simulation.launch
 ```
 
-After that, to launnch the programms contained in this repository, simply open a new terminal and launch:
+In the end that, to launch the programms contained in this repository, simply open a new terminal and launch:
 	
 ```bash
 $ roslaunch assignmnent2 assignment.launch
