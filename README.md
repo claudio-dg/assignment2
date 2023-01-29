@@ -53,7 +53,7 @@ For this project I built my own robot composed of a base chassis and an addition
 <img src="https://github.com/claudio-dg/assignment2/blob/main/media/My_robot2.png?raw=true" width="400" />
 <p>
 
-Please find the code to create this robot in the Urdf [Folder](https://github.com/claudio-dg/assignment2/tree/main/urdf).
+Please find the code to create this robot in the [urdf](https://github.com/claudio-dg/assignment2/tree/main/urdf) folder.
 ##  Dependencies and Setup
 
 In order to run correctly the project of this repository, some important dependencies have to be taken into account, therefore please make sure to have the following packages already installed in your ```ros_workspace```:
