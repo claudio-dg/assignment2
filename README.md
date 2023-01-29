@@ -40,10 +40,10 @@ The Robot
 ====================================================================
 
 For this project I built my own robot composed of a base chassis and an additional arm on top that combines prismatic and rotational joints. It presents a laser scan sensor located on the chassis and a camera on the end effector of the arm: the dimensions and joints of the arm have been specifically designed for the robot to be capable of detecting the Aruco Markers with the camera without moving its base. As you can see here below, i therefore made an arm with 4 links, where:
-	* The first one (Red cylinder) has a **Revolute joint** that allows to rotate of 360° along **Z-axis**
-	* The second one (Blue cylinder) has again a **Revolute joint** but this time along **X-axis**, to allow rotations as in the second image
-	* The third one (Green cylinder) has a **Prismatic joint** that moves along **Z-axis**, to allow increasing/decreasing the lenght of the arm according to the distance of the marker to detect
-	* The last one (Black parallelepiped) has a **Revolute joint** that allows to rotate of 360° along **X-axis** and has the camera (white cube) mounted on it.
+* The first one (Red cylinder) has a **Revolute joint** that allows to rotate of 360° along **Z-axis**
+* The second one (Blue cylinder) has again a **Revolute joint** but this time along **X-axis**, to allow rotations as in the second image
+* The third one (Green cylinder) has a **Prismatic joint** that moves along **Z-axis**, to allow increasing/decreasing the lenght of the arm according to the distance of the marker to detect
+* The last one (Black parallelepiped) has a **Revolute joint** that allows to rotate of 360° along **X-axis** and has the camera (white cube) mounted on it.
 	
 <p><p align="center">
 <img src="https://github.com/claudio-dg/assignment2/blob/main/media/My_robot1.png?raw=true" width="400" />
