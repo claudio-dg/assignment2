@@ -113,25 +113,24 @@ This repository contains a ROS package called ```"assignment2"``` that includes 
 - [package.xml](https://github.com/claudio-dg/assignment2/blob/main/package.xml): File to configure this package.
 - Docs: folder containing ```Doxygen documentation``` of the package
 - [media/](https://github.com/claudio-dg/assignment2/tree/main/media): folder containing images and graphs used within this [README](https://github.com/claudio-dg/assignment2/blob/main/README.md).
-- src: It contains the implementation of each software components produced for this project.
+- [src](https://github.com/claudio-dg/assignment2/tree/main/src): It contains the implementation of each software components produced for this project.
 	
-	* [FSM.py](https://github.com/claudio-dg/assignment_1/blob/main/scripts/FSM.py): contains the implementation of the SMACH Finite States Machine
+	* [marker_publish.cpp](https://github.com/claudio-dg/assignment2/blob/main/src/marker_publish.cpp): contains the implementation of Aruco markers detector and publisher
 	
-	* [controller.py](https://github.com/claudio-dg/assignment_1/blob/main/scripts/controller.py): It is a dummy implementation of a motion controller. (Credits to [arch_skeleton](https://github.com/buoncubi/arch_skeleton))
+	* [marker_server.cpp](https://github.com/claudio-dg/assignment2/blob/main/src/marker_server.cpp): implements a service that requires the id (marker) detected by the robot and it replies with the information about the corresponding room (name of the room, coordinates of the center, connections with other rooms)
+
 	
-	* [helper.py](https://github.com/claudio-dg/assignment_1/blob/main/scripts/helper.py): It contains the implementation of two helper classes for ROS actions and for interfacing the Ontology through aRMOR_api
+	* [move_arm_server.cpp](https://github.com/claudio-dg/assignment2/blob/main/src/move_arm_server.cpp): It contains the implementation of the server to move robot's arm
 	
-	* [planner.py](https://github.com/claudio-dg/assignment_1/blob/main/scripts/planner.py): It is a dummy implementation of a motion planner. (Credits to [arch_skeleton](https://github.com/buoncubi/arch_skeleton))
-	
-	* [robot_state.py](https://github.com/claudio-dg/assignment_1/blob/main/scripts/robot_state.py): It implements the robot state including: current position, and battery level.
+
 	
 - [launch/](https://github.com/claudio-dg/assignment2/tree/main/launch): It contains the launch files to start the simulation
 	
-	* [start_simulation.launch](https://github.com/claudio-dg/assignment_1/blob/main/launch/start_simulation.launch): launch file of the project
+	* [gmapping.launch](https://github.com/claudio-dg/assignment2/blob/main/launch/gmapping.launch): launch file the planning algorithm
 	
-	* [start_simulation.launch](https://github.com/claudio-dg/assignment_1/blob/main/launch/start_simulation.launch): launch file of the project
+	* [move_base.launch](https://github.com/claudio-dg/assignment2/blob/main/launch/move_base.launch): launch file of the move_bsae package to move the robot
 	
-	* [start_simulation.launch](https://github.com/claudio-dg/assignment_1/blob/main/launch/start_simulation.launch): launch file of the project
+	* [assignment.launch](https://github.com/claudio-dg/assignment2/blob/main/launch/assignment.launch): launch file of the simulation that launches Gazebo and Rviz environments with the model of the robot plus the required nodes.
 
 	
 
