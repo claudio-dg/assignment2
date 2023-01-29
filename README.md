@@ -147,6 +147,9 @@ Markers Detection DEMO
 ====================================================================
 The following video shows the first part of the simulation in which the robot detects one by one the aurco markers: each time a marker is detected, the robot builds the ontology of the map adding the information retrived by the Aruco, and then moves towards another marker until the last one is detected; at that point it moves to a default pose and starts with the patrolling algorithm described in the next section.
 
+[![Click to see Simulation Demo](https://github.com/claudio-dg/assignment2/blob/main/media/ArucoIntro.png?raw=true)](https://youtu.be/vXN9BJobEvc)
+
+
 Patrolling DEMO 
 ====================================================================
 	
