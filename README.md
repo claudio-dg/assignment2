@@ -98,7 +98,7 @@ In the end that, to launch the programms contained in this repository, simply op
 $ roslaunch assignmnent2 assignment.launch
 ```
 
-This will open Gazebo and Rviz Simulation Environments along with a terminal showing the functioning of ```FSM```, and the robot will start its programmed behaviour
+These will open Gazebo and Rviz Simulation Environments along with a terminal showing the functioning of ```FSM```, and the robot will start its programmed behaviour
 ## Project structure
 
 The project is based on the ROS scheme that is shown in the following ```rqt_graph```:
