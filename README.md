@@ -175,3 +175,15 @@ Here you can find a short video (by clicking on the image) showing the resulting
 **4.** Before reaching the exact coordinates of C2 the batery gets low: robot enters in Recharging state of the Finite state machine, and since he hasn't reached yet the corridor it believes to be still in R3; for this reason it plans again to reach C2, and once it reaches its exact coordinates it plans to reach the recharging station and moves towards it.
 	
 **5.** In the end the robot reaches the Recharging station and starts recharging the battery. It waits until it gets full charge, and then restarts its routine by moving towards a corridor.
+	
+	
+	
+ ## Limitations and Possible Improvements
+ 
+The **main limitations** of this project are related to the speed of the robot while patrolling the map, and in general to some "imperfect" motions it makes which, for instance, forced me to increase the minimum range of detection of its laser scan in order to avoid detecting the ground as obstacle (due to chassis balancing) and therefore avoid building erroneous local costmap that caused the robot to reach its goal with a lot of difficulties.
+	
+Therefore **possible improvements** in this sense could involve the usage of a different model of robot more optimised with respect to the one I build, or try to apply some changes to the used one to improve its performances.
+	
+In addition to this, the implementation of the ```robot battery``` could be further improved, since for now it is just represented by a boolean value changing randomly its value after some predefined time, so a better algoritmh could be used to discharge the robot accordingly with the ```travelled distance``` for instance, which would also avoid the robot to reach locations that are too far from its recharging station, that would prevent him to go back and recharge its battery. Moreover another limition about it is that it could happen that robot may actually receive the "recharged" battery state before actually reaching the Recharging station, therefore an algorithm based on "travelled distance" could help in this case. 
+
+In the end, one last limitation is related to the "room reaching activity": in fact since a room is considered reach only when its exact given coordinates are reached, if a robot gets low battery when already phisically in a room, but not yet to the given point, it believes to be yet in the previous one. This happened also in the demo previously shown, but as said id didn't affect the functioning of the simulation, so it is not a big issue actually.
