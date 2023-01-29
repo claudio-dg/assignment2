@@ -58,7 +58,14 @@ Please find the code to create this robot in the [urdf](https://github.com/claud
 
 In order to run correctly the project of this repository, some important dependencies have to be taken into account, therefore please make sure to have the following packages already installed in your ```ros_workspace```:
 - First of all you will need to have the Pkg of my first assignment that you can find in this link: [assignment_1](https://github.com/claudio-dg/assignment_1/tree/second_assignment_changes). Please make sure to clone this repository and to be i the correct branch that i created that is ```second_assignment_changes```, where you can find the codes slightly modified in order to adapt them to this project
-- Additionally you will of course need the packages listed in the Readme of [assignment_1](https://github.com/claudio-dg/assignment_1/tree/second_assignment_changes), that for sake of simplicity shortly list again here: [arch_skeleton](https://github.com/buoncubi/arch_skeleton), [topological_map](https://github.com/buoncubi/topological_map), [aRMOR](https://github.com/EmaroLab/armor) and [SMACH](http://wiki.ros.org/smach) libraries.
+- Additionally you will of course need the packages listed in the Readme of [assignment_1](https://github.com/claudio-dg/assignment_1/tree/second_assignment_changes), that for sake of simplicity I briefly list again here: [arch_skeleton](https://github.com/buoncubi/arch_skeleton), [topological_map](https://github.com/buoncubi/topological_map), [aRMOR](https://github.com/EmaroLab/armor) and [SMACH](http://wiki.ros.org/smach) libraries.
+- **MoveBase** package, of the ROS Navigation stack :
+```bash
+$ sudo apt-get install ros-<ros_distro>-navigation
+```
+- [explore-lite](https://github.com/CarmineD8/m-explore) package
+- [planning](https://github.com/CarmineD8/planning) package to use path planning algorithms
+- [aruco_ros](https://github.com/CarmineD8/aruco_ros) package for being able to work with aruco markers.
 
 	
 When all these are correctly installed, to try this repository it is necessary to: clone it in your ROS workspace: 
