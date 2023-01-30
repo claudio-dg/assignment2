@@ -141,12 +141,191 @@ This repository contains a ROS package called ```"assignment2"``` that includes 
  
 ## Software Components and code description
 	
+Here are shown the details of each software component implemented in this repository and contained in the [src/](https://github.com/claudio-dg/assignment2/tree/main/src) folder.
 
+```marker_publish``` node 
+====================================================================
 
-
-
-
+This node impelements an algorithm that, exploiting ```Aruco``` Libraries, recognises the Id related to markers that are seen by the camera; to do so it subscirbes to ```/image``` topic, but to apply it to my robot I remapped such topic to ```/robot/camera1/image_raw``` in the launch file (see [assignment.launch](https://github.com/claudio-dg/assignment2/blob/main/launch/assignment.launch)). After detecting an aruco, it starts printing the related ID, and thanks to the part of the code that I added, it publishes it (only once) on ```/my_ID_topic```. When the last ID is detected (i.e. id=14), this node is aborted. The subscriber to such topic is to be found in the ```FSM``` of assignment_1 package, where the received ID is managed to retrieve room informations and buil the topological map.
 	
+Added part to this code:
+```bash
+          int current_id =  markers_.at(i).id;
+          
+          if(current_id != prec) 
+	//if statement to publish the id only once, when a new aruco is detected instead having multiple publishes for the same marker
+          {
+          ROS_INFO("NUOVO ID E': %i ...",current_id );
+          prec = current_id;
+          
+          id.data = current_id;
+          id_pub.publish(id);
+          if(prec ==14) 
+          // terminate this node when last  marker is detected
+ 	  {
+ 	  ROS_INFO("All markers detected, terminate the node");
+ 	  ros::Duration(2).sleep();
+ 	  abort();
+ 	  }
+          }
+```	
+	
+	
+	
+```marker_server``` node  
+====================================================================
+	
+This node implements a server for ```/room_info``` that receives the number of ID detected from robot's camera, and  gives as answer the information of the room related (the name, the center coordinates etc...). In addition to this part, that was already given by the professor's code, I added the client to ```/MY_move_arm```, so that each time a marker is detected, such service is called to move the robot's arm towards the successive pre-defined aruco marker position.
+	
+	
+	
+	
+	
+	
+```move_arm_server``` node  
+====================================================================
+
+This node implements the server of ```/MY_move_arm``` to move robot's arm : when called it will publish the joint values on the various ```Joint_position_controllers``` it is subscribed to, according to the request number, in order to move the arm to a certain pose, (each related to a certain aruco marker to detect). In particular it presents 9 different poses to select from, 1 for each marker plus a default pose and a pose to rotate the camera of 360 degrees.
+
+```bash
+bool reach(assignment2::MY_SetPose::Request &req, assignment2::MY_SetPose::Response &resp){
+
+switch (req.pose_number){
+	case 0:
+		
+		ROS_INFO("Default pose");
+		joint1_value.data =0;
+		joint2_value.data =0;
+		joint3_value.data =0.1;
+		joint4_value.data =0;
+		new_pose = 1;
+		break;
+	case 1: 
+		
+		ROS_INFO("first marker pose");
+		joint1_value.data =0.2;
+		joint2_value.data =1.6;
+		joint3_value.data =0;
+		joint4_value.data =-1.5;
+		new_pose = 1;
+		break;
+	case 2:
+		
+		ROS_INFO("second marker pose");
+		joint1_value.data =0.2;
+		joint2_value.data =0.8;
+		joint3_value.data =0.5;
+		joint4_value.data =-1.5;
+		new_pose = 1;
+		break;
+	case 3: 
+		
+		ROS_INFO("third marker pose");
+		joint1_value.data =2.15; //1.95
+		joint2_value.data =0.8;
+		joint3_value.data =0.5;
+		joint4_value.data =-1.5;
+		new_pose = 1;
+		break;
+	case 4:
+		
+		ROS_INFO("fourth marker pose");
+		joint1_value.data =3.14;//3.14
+		joint2_value.data =0.8;
+		joint3_value.data =0.5;
+		joint4_value.data =-1.5;
+		new_pose = 1;
+		break;
+	case 5: 
+		
+		ROS_INFO("fifth marker pose");
+		joint1_value.data =3.14;
+		joint2_value.data =1.6;
+		joint3_value.data =0;
+		joint4_value.data =-1.5;
+		new_pose = 1;
+		break;
+	case 6:
+	
+		ROS_INFO("sixth marker pose");
+		joint1_value.data =3.8;
+		joint2_value.data =1.6;
+		joint3_value.data =0;
+		joint4_value.data =-1.5;
+		new_pose = 1;
+		break;
+	case 7: 
+		
+		ROS_INFO("seventh marker pose");
+		joint1_value.data =4.6;//4.4
+		joint2_value.data =1.3;
+		joint3_value.data =0;
+		joint4_value.data =0;
+		new_pose = 1;
+		break;
+	case 10: 
+		
+		ROS_INFO("Rotation request");
+		sign = -sign ;  //+-1
+		joint1_value.data =6.28*sign; //3.6
+		joint2_value.data =0;
+		joint3_value.data =0.1;
+		joint4_value.data =0;		
+		new_pose = 1;
+		break;
+	default:
+		ROS_INFO("Non existing Pose");
+		
+		break;
+		}
+  return true;
+}
+
+int main(int argc, char** argv)
+{
+  ros::init(argc, argv, "move_arm_server");
+  ros::NodeHandle nh;
+  //init service server
+  ROS_INFO("Creating Service server to move arm  ...");
+  ros::ServiceServer service = nh.advertiseService("MY_move_arm", reach);
+  ros::AsyncSpinner spinner(1);
+  spinner.start();
+  
+  // Define the publishers for robot's joints 
+  pub_joint1 = nh.advertise<std_msgs::Float64> ("/m2wr/joint1_position_controller/command", 1);
+  pub_joint2 = nh.advertise<std_msgs::Float64> ("/m2wr/joint2_position_controller/command", 1);
+  pub_joint3 = nh.advertise<std_msgs::Float64> ("/m2wr/joint3_position_controller/command", 1);
+  pub_joint4 = nh.advertise<std_msgs::Float64> ("/m2wr/joint4_position_controller/command", 1);
+  
+  //At the beginning force the position of first marker, then wait for calls ORA FUNZA con la sleep
+  joint1_value.data =0.2;
+  joint2_value.data =1.6;
+  joint3_value.data =0;
+  joint4_value.data =-1.5;
+  ROS_INFO("START MOVING towards the first marker pose in 3 sec...");
+  int i = 0;
+  ros::Duration(3).sleep();
+  pub_joint1.publish(joint1_value);
+  pub_joint2.publish(joint2_value);
+  pub_joint3.publish(joint3_value);
+  pub_joint4.publish(joint4_value);
+
+  while(ros::ok()){
+  	 
+ 	 if (new_pose)
+ 	 {
+		
+		pub_joint1.publish(joint1_value);
+		pub_joint2.publish(joint2_value);
+		pub_joint3.publish(joint3_value);
+		pub_joint4.publish(joint4_value); 
+		ROS_INFO("PUBLISHING: J1= %f** J2 = %f** J3=%f** J4= %f...",joint1_value.data,joint2_value.data,joint3_value.data,joint4_value.data );
+		new_pose = 0;
+	 }
+  }
+  return(0);
+}	
+```
  
 
 ## Behaviuor Presentation
