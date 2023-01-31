@@ -202,7 +202,7 @@ int main(int argc, char** argv)
   pub_joint3 = nh.advertise<std_msgs::Float64> ("/m2wr/joint3_position_controller/command", 1);
   pub_joint4 = nh.advertise<std_msgs::Float64> ("/m2wr/joint4_position_controller/command", 1);
   
-  //At the beginning force the position of first marker, then wait for calls ORA FUNZA con la sleep
+  //At the beginning force the position of first marker, then wait for calls 
   joint1_value.data =0.2;
   joint2_value.data =1.6;
   joint3_value.data =0;
