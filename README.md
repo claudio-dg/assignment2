@@ -56,7 +56,7 @@ Please find the code to create this robot in the [urdf](https://github.com/claud
 ##  Dependencies and Setup
 
 In order to run correctly the project of this repository, some important dependencies have to be taken into account, therefore please make sure to have the following packages already installed in your ```ros_workspace```:
-- First of all you will need to have the Pkg of my first assignment that you can find in this link: [assignment_1](https://github.com/claudio-dg/assignment_1/tree/second_assignment_changes). Please make sure to clone this repository and to be in the correct branch that i created that is ```second_assignment_changes```, where you can find the codes slightly modified in order to adapt them to this project
+- First of all you will need to have the Pkg of my first assignment that you can find in this link: [assignment_1](https://github.com/claudio-dg/assignment_1/tree/second_assignment_changes). Please make sure to clone this repository and to be in the correct branch that i created that is ```second_assignment_changes```, where you can find the codes slightly modified in order to adapt them to this part of the project
 - Additionally you will of course need the packages listed in the Readme of [assignment_1](https://github.com/claudio-dg/assignment_1/tree/second_assignment_changes), that for sake of simplicity I briefly list again here: [arch_skeleton](https://github.com/buoncubi/arch_skeleton), [topological_map](https://github.com/buoncubi/topological_map), [aRMOR](https://github.com/EmaroLab/armor) and [SMACH](http://wiki.ros.org/smach) libraries.
 - **MoveBase** package, of the ROS Navigation stack :
 ```bash
