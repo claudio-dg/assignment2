@@ -146,7 +146,7 @@ Here are shown the details of each software component implemented in this reposi
 ```marker_publish``` node 
 ====================================================================
 
-This node impelements an algorithm that, exploiting ```Aruco``` Libraries, recognises the Id related to markers that are seen by the camera; to do so it subscirbes to ```/image``` topic, but to apply it to my robot I remapped such topic to ```/robot/camera1/image_raw``` in the launch file (see [assignment.launch](https://github.com/claudio-dg/assignment2/blob/main/launch/assignment.launch)). After detecting an aruco, it starts printing the related ID, and thanks to the part of the code that I added, it publishes it (only once) on ```/my_ID_topic```. When the last ID is detected (i.e. id=14), this node is aborted. The subscriber to such topic is to be found in the ```FSM``` of assignment_1 package, where the received ID is managed to retrieve room informations and buil the topological map.
+This node implements an algorithm that, exploiting ```Aruco``` Libraries, recognises the Id related to markers that are seen by the camera; to do so it subscribes to ```/image``` topic, but to apply it to my robot I remapped such topic to ```/robot/camera1/image_raw``` in the launch file (see [assignment.launch](https://github.com/claudio-dg/assignment2/blob/main/launch/assignment.launch)). After detecting an aruco, it starts printing the related ID, and thanks to the part of the code that I added, it publishes it (only once) on ```/my_ID_topic```. When the last ID is detected (i.e. id=14), this node is aborted. The subscriber to such topic is to be found in the ```FSM``` of assignment_1 package, where the received ID is managed to retrieve room informations and buil the topological map.
 	
 Added part to this code:
 ```bash
@@ -297,7 +297,7 @@ int main(int argc, char** argv)
   pub_joint3 = nh.advertise<std_msgs::Float64> ("/m2wr/joint3_position_controller/command", 1);
   pub_joint4 = nh.advertise<std_msgs::Float64> ("/m2wr/joint4_position_controller/command", 1);
   
-  //At the beginning force the position of first marker, then wait for calls ORA FUNZA con la sleep
+  //At the beginning force the position of first marker, then wait for calls 
   joint1_value.data =0.2;
   joint2_value.data =1.6;
   joint3_value.data =0;
@@ -365,4 +365,4 @@ Therefore **possible improvements** in this sense could involve the usage of a d
 	
 In addition to this, the implementation of the ```robot battery``` could be further improved, since for now it is just represented by a boolean value changing randomly its value after some predefined time, so a better algoritmh could be used to discharge the robot accordingly with the ```travelled distance``` for instance, which would also avoid the robot to reach locations that are too far from its recharging station, that would prevent him to go back and recharge its battery. Moreover another limition about it is that it could happen that robot may actually receive the "recharged" battery state before actually reaching the Recharging station, therefore an algorithm based on "travelled distance" could help in this case. 
 
-In the end, one last limitation is related to the "room reaching activity": in fact since a room is considered reach only when its exact given coordinates are reached, if a robot gets low battery when already phisically in a room, but not yet to the given point, it believes to be yet in the previous one. This happened also in the demo previously shown, but as said id didn't affect the functioning of the simulation, so it is not a big issue actually.
+In the end, one last limitation is related to the "room reaching activity": in fact since a room is considered reach only when its exact given coordinates are reached, if a robot gets low battery when already phisically in a room, but not yet to the given point, it believes to be still in the previous one. This happened also in the demo previously shown, but as said id didn't affect the functioning of the simulation, so it is not a big issue actually.
