@@ -20,7 +20,7 @@ Table of contents
 
 ## Introduction
 
-The goal of this assignment is to integrate the architecture developed in the first assignment with a robotic simulation., in particular we have to Add a robot to a simulation environment and Integrate (if needed, modify it) the architecture that we have developed in the first assignment to the given scenario in such a way that:
+The goal of this assignment is to integrate the architecture developed in the [first assignment](https://github.com/claudio-dg/assignment_1) with a robotic simulation., in particular we have to Add a robot to a simulation environment and Integrate (if needed, modify it) the architecture that we have developed in the first assignment to the given scenario in such a way that:
 * The robot is spawned in the initial position x = -6.0, y = 11.0
 * Builds the "semantic" map of the environment by detecting, without moving the base of the robot, all seven markers that are present around it, by calling the provided service node.
 * Starts the patrolling algorithm by relying on autonomous navigation strategies (mapping/planning) and on the information collected and stored in the ontology during the previous step.
